@@ -63,19 +63,5 @@ export class AppComponent {
     this.sizeSubject.next(size);
   }
 
-  loginGitHub(){
-    this.af.auth.login({
-      provider: AuthProviders.Github,
-      method: AuthMethods.Popup,
-    });
-  }
-
-  loginGoogle(){
-     this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    });
-  }
-
   title = 'app works!';
 }

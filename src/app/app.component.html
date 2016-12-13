@@ -3,6 +3,8 @@
 </h1>
 
 <div> {{ (af.auth | async)?.uid }} </div>
+
+<!--<div> {{ (af.auth | async)?.uid }} </div>
  <button (click)="loginGitHub()">Login With Github</button>
  <button (click)="loginGoogle()">Login With Google</button>
 
@@ -39,4 +41,13 @@
   <br />
   <button (click)="save(newname.value)">Set Name</button>
   <button (click)="update(newsize.value)">Update Size</button>
-  <button (click)="delete()">Delete</button>
+  <button (click)="delete()">Delete</button>-->
+
+<nav>
+    <a routerLink="/create" routerLinkActive="active">Create</a>
+    <a routerLink="/poll" routerLinkActive="active">View</a>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+</nav>
+
+ <!-- Router Outlet -->
+<router-outlet></router-outlet>

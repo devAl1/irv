@@ -1,0 +1,10 @@
+<p>
+  login works!
+</p>
+
+<br />
+
+<div> {{ (af.auth | async)?.uid }} </div>
+ <button (click)="loginGitHub()">Login With Github</button>
+ <button (click)="loginGoogle()">Login With Google</button>
+ <button (click)="logout()">Logout</button>

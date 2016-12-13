@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-
+import { PollModule } from './poll/poll.module';
+import { CreatePollModule } from './create-poll/create-poll.module';
+import { LoginModule } from './login/login.module';
 
 // Must export the config
 export const firebaseConfig = {
@@ -24,6 +27,10 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule, 
+    AppRoutingModule,
+    CreatePollModule,
+    PollModule,
+    LoginModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
