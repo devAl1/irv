@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { PollModule } from './poll/poll.module';
 import { CreatePollModule } from './create-poll/create-poll.module';
 import { LoginModule } from './login/login.module';
+import { ValuesPipe } from './values.pipe';
 
 // Must export the config
 export const firebaseConfig = {
@@ -21,7 +22,8 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ValuesPipe
   ],
   imports: [
     BrowserModule,
