@@ -1,29 +1,40 @@
 <div class="row">
-  <div class="col-md-3">
-    <p>Previous Polls</p>
+    <div class="col-md-3">
+        <p>Previous Polls</p>
 
-    <ul>
-      <li **ngFor="let item of currentPoll | values:'title'">{{item.title}}</li>
-    </ul>
+        <ul>
+            <li *ngFor="let item of currentPoll | values:'title':true">{{item.title}}</li>
+        </ul>
 
-    <button type="button" class="btn btn-default" (click)="create = true">Create New Poll</button>
-  </div>
-  <div class="col-md-9">
-
-    <h2>{{currentPoll.title}}</h2>
-    <input type="text" #currentPoll.title>
-
-
-
-    <div class="btn-group mb-10" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Add Question</button>
+        <button type="button" class="btn btn-default" (click)="prepare = true">Create New Poll</button>
     </div>
+    <div class="col-md-9">
+
+        <div class="row" *ngIf="prepare === true">
+            <div class="row">
+                <input type="text" #newPollTitle>
+                <button type="button" class="btn btn-default" (click)="createNewPoll(newPollTitle.value)">Start Poll</button>
+            </div>
+        </div>
 
 
 
-    <div class="btn-group mb-10" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Done</button>
-      <button type="button" class="btn btn-default">Start Over</button>
+        <div *ngIf="currentPoll">
+            <h2>{{currentPoll.title}}</h2>
+
+            <div clss="row">
+                <div class="btn-group mb-10" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Add Question</button>
+                </div>
+            </div>
+
+
+            <div clss="row">
+                <div class="btn-group mb-10" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Done</button>
+                    <button type="button" class="btn btn-default">Start Over</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

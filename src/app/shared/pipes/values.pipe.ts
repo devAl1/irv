@@ -5,17 +5,25 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ValuesPipe implements PipeTransform {
 
-  transform(value: any, args?: any[]): Object[] {
+  transform(value: any, keyName: any, sort: any): Object[] {
+    if (!value) {
+        return [];
+    }
+
     let keyArr: any[] = Object.keys(value),
-        dataArr = [],
-        keyName = args[0];
+        dataArr = [];
 
     keyArr.forEach((key: any) => {
-        value[key][keyName] = key;
-        dataArr.push(value[key])
+         // create the literal from the key's value
+        let retObj = {
+            childValue: value[key]
+        };
+        // add the key as a property
+        retObj[keyName] = key;
+        dataArr.push(retObj);
     });
 
-    if(args[1]) {
+    if (sort) {
         dataArr.sort((a: Object, b: Object): number => {
             return a[keyName] > b[keyName] ? 1 : -1;
         });
