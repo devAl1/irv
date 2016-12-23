@@ -14,7 +14,7 @@ const createRoutes: Routes = [
   ],
   exports: [
     RouterModule
-  ], 
+  ],
   providers: [
     AuthGuard
   ]
